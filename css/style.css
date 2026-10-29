@@ -177,7 +177,7 @@ button:focus {
 .majors {
   display: grid;
   /* 1fr: 남는 공간을 칸 수로 나눠서 각 칸에 같은 몫을 줌. */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 2.5rem 0;
   list-style: none;
@@ -458,4 +458,96 @@ button:focus {
 
 .contact__link:hover {
   color: var(--color-accent);
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 3rem 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .header__menu {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 4rem;
+    gap: 1rem;
+  }
+
+  .header__nav {
+    width: 100%;
+  }
+
+  #home {
+    padding-bottom: 3rem;
+  }
+
+  .home__title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .majors {
+    gap: 0.75rem;
+  }
+
+  .major {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .major__icon {
+    font-size: 2rem;
+  }
+
+  .major__title {
+    font-size: 1rem;
+  }
+
+  .major p:last-child {
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    flex-direction: column;
+  }
+
+  .category {
+    width: 100%;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial {
+    flex-direction: column;
+  }
+
+  .testimonial:nth-child(even) .testimonial__img {
+    order: 0;
+  }
+
+  .arrow__up {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
 }
