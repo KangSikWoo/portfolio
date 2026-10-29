@@ -163,3 +163,50 @@ button:focus {
   /* outline : 컨텐츠 사이에 영향을 안 미침 */
   outline: 2px solid var(--color-accent);
 }
+
+/* About */
+
+/* 해당 부분이 display: flex로 했을 때는 major부분이 텍스트에 너비가 따라 달라짐. */
+/* display: grid를 사용하여 텍스트 양에 상관없이 동일한 너비를 가지게 해줌. */
+.majors {
+  display: grid;
+  /* 1fr: 남는 공간을 칸 수로 나눠서 각 칸에 같은 몫을 줌. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 16px;
+  margin: 2.5rem 0;
+  list-style: none;
+  padding: 0;
+}
+
+.major {
+  background-color: var(--color-primary-variant);
+  padding: 2rem 1rem;
+  color: var(--color-text);
+  border-radius: 1rem;
+  cursor: default;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.28);
+}
+
+.major__icon {
+  font-size: 4rem;
+  margin: 1rem 0;
+  color: var(--color-accent);
+  transition: all 300ms ease;
+}
+
+.major__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* transform은 요소의 모양은 그대로 두고 화면에서 위치·회전·크기·기울기만 바뀜. 그래서 레이아웃을 다시 계산하지 않아 가벼움. */
+/* transition은 값이 바뀔 때 중간 과정을 애니메이션으로 채우는 속성.*/
+/* transform : 상태가 바뀌는 쪽에 */
+/* transition : 기본 상태인 원래 요소에 */
+/* major 부분에 hover하면 major__icon 부분이 바뀜. */
+.major:hover .major__icon {
+  transform: rotate(-15deg) scale(1.2);
+}
